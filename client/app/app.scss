@@ -21,9 +21,23 @@ $fa-font-path: "/bower_components/font-awesome/fonts";
     }
 }
 
+md-icon.fa {
+  padding-left:0px;
+  padding-right: 10px;
+}
+
+.twitter-icon {
+  font-size: 24px;
+  color: white;
+}
+
+.twitter {
+  color: white !important;
+  background-color: #55acee !important;
+}
+
 // Component styles are injected through grunt
 // injector
-@import 'account/login/login.scss';
 @import 'admin/admin.scss';
 @import 'main/main.scss';
 // endinjector
