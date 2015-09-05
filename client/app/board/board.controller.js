@@ -2,7 +2,6 @@
 
 angular.module('pinstackApp')
   .controller('BoardCtrl', function ($scope, $stateParams, BoardModel) {
-    $scope.pins = [];
 
     function init() {
         BoardModel.get($stateParams.userId)
@@ -10,6 +9,18 @@ angular.module('pinstackApp')
           $scope.pins = pins;
         });
     }
+
+    function add(pin) {
+      BoardModel.addPin(pin)
+      .success(function (pin) {
+
+        init();
+      });
+    }
+
+    $scope.pins = [];
+    $scope.add = add;
+    $scope.pin = {};
 
     init();
   });

@@ -2,14 +2,14 @@
 
 angular.module('pinstackApp')
   .service('BoardModel', function ($http) {
-    var endpoint = '/api/boards/';
+    var endpoint = '/api/pins/';
 
     function getUrl(path) {
       return endpoint + path;
     }
 
     function get(userId) {
-      return $http.get(getUrl(userId));
+      return $http.get(getUrl('user/' + userId));
     }
 
     function addPin(pin) {
@@ -19,7 +19,6 @@ angular.module('pinstackApp')
     function removePin(pin) {
       return $http.delete(getUrl(pin._id));
     }
-
 
     this.get = get;
     this.addPin = addPin;
