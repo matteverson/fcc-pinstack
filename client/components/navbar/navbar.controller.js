@@ -10,7 +10,11 @@ angular.module('pinstackApp')
 
   $scope.logout = function() {
     Auth.logout();
-    $location.path('/login');
+    $location.path('/');
+  };
+
+  $scope.goToMyBoard = function() {
+      $scope.go('/board/' + Auth.getCurrentUser()._id);
   };
 
   $scope.getTitle = function() {
@@ -22,7 +26,7 @@ angular.module('pinstackApp')
       case '/settings':
         return 'Settings';
       case '/':
-        return 'Pins';
+        return 'Pinstack';
       default:
         return 'Pinstack';
       }

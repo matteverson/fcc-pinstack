@@ -1,23 +1,28 @@
 <div ng-controller="NavbarCtrl">
-<md-toolbar>
-  <div class="md-toolbar-tools">
-    <md-button class="md-icon-button" aria-label="Settings" ng-click="toggleLeft()">
-      <md-icon>menu</md-icon>
-    </md-button>
-    <h2>{{ getTitle() }}</h2>
-    <span flex></span>
-    <md-button class="md-icon-button" aria-label="All books" ng-show="isLoggedIn" ng-click="go('/')">
-      <md-icon>book</md-icon>
-      <md-tooltip>All books</md-tooltip>
-    </md-button>
-    <md-button class="md-icon-button" aria-label="My books" ng-click="go('/mybooks')" ng-show="isLoggedIn">
-      <md-icon>library_books</md-icon>
-      <md-tooltip>My books</md-tooltip>
-    </md-button>
-    <md-button class="md-icon-button" aria-label="Trade requests" ng-click="go('/trades')" ng-show="isLoggedIn">
-      <md-icon>swap_horiz</md-icon>
-      <md-tooltip>Trade requests</md-tooltip>
-    </md-button>
-  </div>
-</md-toolbar>
+  <md-toolbar>
+    <div class="md-toolbar-tools">
+      <h2>{{ getTitle() }}</h2>
+      <span flex></span>
+      <md-button class="md-icon-button" aria-label="Home" ng-click="go('/')">
+        <md-icon>home</md-icon>
+        <md-tooltip>Home</md-tooltip>
+      </md-button>
+      <md-button class="md-icon-button" aria-label="My pins" ng-click="goToMyBoard()" ng-show="isLoggedIn">
+        <md-icon>photo</md-icon>
+        <md-tooltip>My pins</md-tooltip>
+      </md-button>
+      <md-button class="md-icon-button" aria-label="Log in" ng-click="go('/login')" ng-hide="isLoggedIn">
+        <md-icon>verified_user</md-icon>
+        <md-tooltip>Log in</md-tooltip>
+      </md-button>
+      <md-button class="md-icon-button" aria-label="Settings" ng-click="go('/settings')" ng-show="isLoggedIn">
+        <md-icon>settings</md-icon>
+        <md-tooltip>Settings</md-tooltip>
+      </md-button>
+      <md-button class="md-icon-button" aria-label="Log out" ng-click="logout()" ng-show="isLoggedIn">
+        <md-icon>close</md-icon>
+        <md-tooltip>Log out</md-tooltip>
+      </md-button>
+    </div>
+  </md-toolbar>
 </div>
