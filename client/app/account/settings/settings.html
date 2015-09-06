@@ -3,46 +3,6 @@
 <section layout="column" layout-padding>
   <div layout="row" layout-align="center center">
     <div flex="80" flex-sm="100" layout-padding class="md-whiteframe-z2">
-      <h3>Profile</h3>
-      <form name="profileForm" ng-submit="updateProfile(profileForm)" novalidate>
-        <md-input-container>
-          <label>Full name</label>
-          <input type="text" name="name" ng-model="user.name"
-          required/>
-          <div ng-messages="profileForm.name.$error" role="alert">
-            <div ng-message="required">This is required.</div>
-          </div>
-        </md-input-container>
-        <md-input-container>
-          <label>City</label>
-          <input type="text" name="city" ng-model="user.city"
-          />
-        </md-input-container>
-        <md-input-container>
-          <label>State</label>
-          <input type="text" name="state" ng-model="user.state"
-          />
-        </md-input-container>
-        <md-input-container>
-          <label>Email</label>
-          <input type="email" name="email" ng-model="user.email"
-          required
-          mongoose-error/>
-          <div ng-messages="profileForm.email.$error" role="alert">
-            <div ng-message="required">This is required.</div>
-            <div ng-message="email">This must be a valid email.</div>
-          </div>
-        </md-input-container>
-        <div layout="row">
-          <md-button class="md-primary md-raised" type="submit">
-            Save changes
-          </md-button>
-        </div>
-      </form>
-    </div>
-  </div>
-  <div layout="row" layout-align="center center">
-    <div flex="80" flex-sm="100" layout-padding class="md-whiteframe-z2">
       <h3>Change password</h3>
       <form class="form" name="passwordForm" ng-submit="changePassword(passwordForm)" novalidate>
         <md-input-container>

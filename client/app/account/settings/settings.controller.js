@@ -18,13 +18,4 @@ angular.module('pinstackApp')
         });
       }
 		};
-
-    $scope.updateProfile = function(form) {
-      if(form.$valid) {
-        Auth.updateProfile($scope.user.name, $scope.user.city, $scope.user.state, $scope.user.email)
-        .then(function() {
-          $scope.message = 'Profile successfully updated.';
-        });
-      }
-    };
   });
