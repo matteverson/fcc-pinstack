@@ -1,0 +1,22 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+<section>
+  <div masonry="{ 'gutter': 5 }" column-width="190">
+    <div class="masonry-brick overlay-container md-whiteframe-z2" ng-repeat="pin in pins" ng-click="toggleOverlay(pin)">
+      <div class="beneath-overlay">
+        <img ng-src="{{ pin.url }}"></img>
+        <p layout-margin>{{ pin.description }}</p>
+      </div>
+      <div class="overlay" ng-show="pin.showOverlay" layout layout-align="center center">
+        <md-button class="md-fab md-mini md-warn" ng-click="remove(pin)">
+          <md-icon>delete</md-icon>
+        </md-button>
+      </div>
+    </div>
+  </div>
+  <div ng-show="!pins.length" flex layout layout-align="center center" layout-padding>
+    <h1 class="md-display-2 background-message">Your board is empty. Click below to add a pin.</h1>
+  </div>
+  <md-button class="md-fab md-fab-bottom-right" ng-click="openForm($event)">
+    <md-icon>add</md-icon>
+  </md-button>
+</section>

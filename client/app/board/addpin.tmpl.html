@@ -1,0 +1,42 @@
+<md-dialog layout="column" aria-label="Add an image">
+  <form name="form" ng-submit="answer(form)" novalidate>
+  <md-toolbar>
+    <div class="md-toolbar-tools">
+      <h2>Pin something to your board</h2>
+      <span flex></span>
+      <md-button class="md-icon-button" ng-click="cancel()">
+        <md-icon aria-label="Close dialog">close</md-icon>
+      </md-button>
+    </div>
+  </md-toolbar>
+  <md-dialog-content>
+    <div>
+      <md-input-container>
+        <label>URL</label>
+        <input type="text" name="url" ng-model="pin.url"
+        required/>
+        <div ng-hide="form.url.$pristine" ng-messages="form.url.$error" role="alert">
+          <div ng-message="required">This is required.</div>
+        </div>
+      </md-input-container>
+      <md-input-container>
+        <label>Description</label>
+        <textarea name="description" columns="1" md-maxlength="140" ng-model="pin.description"
+        required></textarea>
+        <div ng-hide="form.description.$pristine" ng-messages="form.description.$error" role="alert">
+          <div ng-message="required">This is required.</div>
+        </div>
+      </md-input-container>
+    </div>
+  </md-dialog-content>
+  <div class="md-actions" layout="row">
+    <span flex></span>
+    <md-button type="button" ng-click="cancel()">
+      Cancel
+    </md-button>
+    <md-button type="submit" class="md-primary" style="margin-right:20px;">
+      Save
+    </md-button>
+  </div>
+  </form>
+</md-dialog>

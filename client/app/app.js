@@ -4,6 +4,8 @@ angular.module('pinstackApp', [
   'ngCookies',
   'ngResource',
   'ngSanitize',
+  'ngMessages',
+  'wu.masonry',
   'ngMaterial',
   'ui.router'
 ])

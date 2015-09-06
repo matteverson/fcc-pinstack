@@ -19,6 +19,8 @@ module.exports = function(config) {
       'client/bower_components/angular-material/angular-material.js',
       'client/bower_components/angular-sanitize/angular-sanitize.js',
       'client/bower_components/angular-animate/angular-animate.js',
+      'client/bower_components/angular-messages/angular-messages.js',
+      'client/bower_components/angular-masonry/angular-masonry.js',
       'client/bower_components/angular-aria/angular-aria.js',
       'client/bower_components/angular-route/angular-route.js',
       'client/bower_components/lodash/dist/lodash.compat.js',

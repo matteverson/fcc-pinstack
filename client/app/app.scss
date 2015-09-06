@@ -36,6 +36,14 @@ md-icon.fa {
   background-color: #55acee !important;
 }
 
+.masonry-brick {
+  margin-bottom: 10px;
+}
+
+.masonry-brick img {
+  max-width: 190px;
+}
+
 // Component styles are injected through grunt
 // injector
 @import 'admin/admin.scss';
