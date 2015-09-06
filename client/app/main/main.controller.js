@@ -10,5 +10,15 @@ angular.module('pinstackApp')
         });
     }
 
+    function boardUrl(pin) {
+      if (pin.owner) {
+        return '../board/' + pin.owner._id;
+      }
+      else {
+        return '/';
+      }
+    }
+
+    $scope.boardUrl = boardUrl;
     init();
   });

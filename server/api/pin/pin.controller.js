@@ -5,13 +5,15 @@ var Pin = require('./pin.model');
 
 // Get list of pins
 exports.index = function(req, res) {
-  Pin.find(function (err, pins) {
+  Pin.find()
+  .populate('owner')
+  .exec(function (err, pins) {
     if(err) { return handleError(res, err); }
     return res.status(200).json(pins);
   });
 };
 
-// Get list of pins
+// Get list of pins for a user
 exports.userIndex = function(req, res) {
   Pin.find()
   .where('owner').equals(req.params.id)

@@ -3,7 +3,7 @@
   <div masonry="{ 'gutter': 5 }" column-width="190">
       <div class="masonry-brick md-whiteframe-z2" ng-repeat="pin in pins">
         <img ng-src="{{ pin.url }}"></img>
-        <p layout-margin>{{ pin.description }}</p>
+        <p layout-margin>{{ pin.description }}<br /><a class="md-caption" ng-href="{{ boardUrl(pin) }}">{{ pin.owner.name }}</a></p>
       </div>
   </div>
 </section>

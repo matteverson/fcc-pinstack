@@ -14,7 +14,7 @@ function AddPinDialogCtrl ($scope, $mdDialog) {
 }
 
 angular.module('pinstackApp')
-  .controller('BoardCtrl', function ($scope, $stateParams, BoardModel, $mdDialog) {
+  .controller('BoardCtrl', function ($scope, $stateParams, BoardModel, $mdDialog, Auth) {
 
     function init() {
         BoardModel.get($stateParams.userId)
@@ -42,8 +42,10 @@ angular.module('pinstackApp')
     }
 
     function toggleOverlay(pin) {
-      var i = $scope.pins.indexOf(pin);
-      $scope.pins[i].showOverlay = !$scope.pins[i].showOverlay;
+      if (Auth.isLoggedIn()) {
+        var i = $scope.pins.indexOf(pin);
+        $scope.pins[i].showOverlay = !$scope.pins[i].showOverlay;
+      }
     }
 
     function openForm(ev) {
@@ -67,6 +69,7 @@ angular.module('pinstackApp')
     $scope.remove = remove;
     $scope.toggleOverlay = toggleOverlay;
     $scope.openForm = openForm;
+    $scope.isLoggedIn = Auth.isLoggedIn();
 
     init();
   });
