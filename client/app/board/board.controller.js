@@ -1,19 +1,18 @@
 'use strict';
 
-function AddPinDialogCtrl ($scope, $mdDialog) {
-  $scope.pin = {};
-
-  $scope.cancel = function() {
-    $mdDialog.cancel();
-  };
-  $scope.answer = function(form) {
-    if (form.$valid) {
-      $mdDialog.hide($scope.pin);
-    }
-  };
-}
-
 angular.module('pinstackApp')
+  .controller('AddPinDialogCtrl', function AddPinDialogCtrl ($scope, $mdDialog) {
+    $scope.pin = {};
+
+    $scope.cancel = function() {
+      $mdDialog.cancel();
+    };
+    $scope.answer = function(form) {
+      if (form.$valid) {
+        $mdDialog.hide($scope.pin);
+      }
+    };
+  })
   .controller('BoardCtrl', function ($scope, $stateParams, BoardModel, $mdDialog, Auth) {
 
     function init() {
@@ -50,8 +49,8 @@ angular.module('pinstackApp')
 
     function openForm(ev) {
       $mdDialog.show({
-        controller: AddPinDialogCtrl,
-        templateUrl: '/app/board/addpin.tmpl.html',
+        controller: 'AddPinDialogCtrl',
+        templateUrl: 'app/board/addpin.html',
         parent: angular.element(document.body),
         targetEvent: ev,
         clickOutsideToClose:true
